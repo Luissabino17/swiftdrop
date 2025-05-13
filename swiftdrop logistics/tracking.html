@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Shipment | SwiftDrop</title>
+  <link rel="stylesheet" href="style7.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="swiftdroplogo.png" alt="SwiftDrop Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productdescription.html">New Delivery</a></li>
+        <li><a href="tracking.html" class="active">Track Shipment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="tracking-container">
+    <h1>Track Your Shipment</h1>
+    <form class="tracking-form">
+      <input type="text" placeholder="Enter Tracking Number" required>
+      <button type="submit">Track</button>
+    </form>
+    <div class="tracking-results">
+        <div class="status-card">
+          <h2>Shipment #SD123456789</h2>
+          <div class="status-timeline">
+            <div class="status-item active">
+              <div class="status-dot"></div>
+              <div class="status-content">
+                <h3>Order Received</h3>
+                <p>May 15, 2023 - 10:30 AM</p>
+              </div>
+            </div>
+            <div class="status-item active">
+              <div class="status-dot"></div>
+              <div class="status-content">
+                <h3>Package Collected</h3>
+                <p>May 15, 2023 - 2:15 PM</p>
+              </div>
+            </div>
+            <div class="status-item">
+              <div class="status-dot"></div>
+              <div class="status-content">
+                <h3>In Transit</h3>
+                <p>Estimated: May 16, 2023</p>
+              </div>
+            </div>
+            <div class="status-item">
+              <div class="status-dot"></div>
+              <div class="status-content">
+                <h3>Out for Delivery</h3>
+                <p>Estimated: May 17, 2023</p>
+            </div>
+        </div>
+        <div class="status-item">
+          <div class="status-dot"></div>
+          <div class="status-content">
+            <h3>Delivered</h3>
+            <p>Not yet delivered</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2023 SwiftDrop Logistics. All rights reserved.</p>
+</footer>
+</body>
+</html>  

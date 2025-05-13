@@ -1,0 +1,111 @@
+/* Navigation */
+nav {
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.nav-links a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}/* Inherits navigation and footer from style.css */
+/* Add these additional styles */
+
+.success-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.success-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.success-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+.success-card h1 {
+    color: #27ae60;
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+}
+
+.success-card p {
+    color: #34495e;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.success-card p strong {
+    color: #2c3e50;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.track-btn, .new-order-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.track-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.track-btn:hover {
+    background-color: #2980b9;
+}
+
+.new-order-btn {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.new-order-btn:hover {
+    background-color: #1a252f;
+}

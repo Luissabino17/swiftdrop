@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Delivery Details | SwiftDrop</title>
+  <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <img src="swiftdroplogo.png" alt="SwiftDrop Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="registerform.html">Register</a></li>
+            <li><a href="productdescription.html">New Delivery</a></li>
+            <li><a href="confirmationpage.html">Track Order</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="confirmation-container">
+  <h1>Confirm Your Delivery</h1>
+<div class="details-card">
+  <h2>Product Details</h2>
+  <p><strong>Product Name:</strong> <span id="conf-product-name"></span></p>
+  <p><strong>Type of Product:</strong> <span id="conf-product-type"></span></p>
+  <p><strong>Weight Range:</strong> <span id="conf-weight-range"></span></p>
+  <p><strong>Shipping Cost:</strong> R<span id="conf-weight-price"></span></p>
+  <!-- Add these elements WHERE you want them to appear -->
+<p><strong>Selected Weight:</strong> <span id="conf-weight-range"></span></p>
+<p><strong>Shipping Cost:</strong> R<span id="conf-weight-price"></span></p>
+
+<script>
+  // Load and display all data
+  document.addEventListener('DOMContentLoaded', function() {
+    const storedData = localStorage.getItem('deliveryFormData');
+    
+    if (storedData) {
+      const formData = JSON.parse(storedData);
+      
+      // Display all product info
+      document.getElementById('conf-product-name').textContent = formData.productName || 'Not specified';
+      document.getElementById('conf-product-type').textContent = formData.productType || 'Not specified';
+      document.getElementById('conf-weight-range').textContent = formData.weightRange || 'Not specified';
+      document.getElementById('conf-weight-price').textContent = formData.weightPrice || '0';
+      document.getElementById('conf-pickup').textContent = formData.pickupAddress || 'Not specified';
+      document.getElementById('conf-delivery').textContent = formData.deliveryAddress || 'Not specified';
+      document.getElementById('conf-notes').textContent = formData.notes || 'None';
+    } else {
+      alert('No delivery data found. Please start a new delivery request.');
+      window.location.href = 'productdescription.html';
+    }
+  });
+</script>
+
+
+      <h2>Addresses</h2>
+      <p><strong>Pickup Address:</strong> <span id="conf-pickup"></span></p> <p><strong>Delivery Address:</strong> <span id="conf-delivery"></span></p>
+
+      <h2>Special Instructions</h2>
+      <p id="conf-notes"></p>
+
+      <div class="button-group">
+        <button class="edit-btn" onclick="window.location.href='productdescription.html'">Edit Details</button>
+        <button class="confirm-btn" onclick="submitOrder()">Confirm & Submit</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function submitOrder() {
+      // Clear the stored form data
+      localStorage.removeItem('deliveryFormData');
+      // Redirect to success page
+      window.location.href = 'succespage.html';
+    }
+  </script>
+</body>
+</html>
+

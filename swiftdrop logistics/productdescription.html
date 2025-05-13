@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Delivery Details | SwiftDrop</title>
+  <link rel="stylesheet" href="style4.css">
+  <script>
+    // Handle weight selection
+    function selectWeight(range, price) {
+      const buttons = document.querySelectorAll('.weight-btn');
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      event.target.classList.add('selected');
+      
+      document.getElementById('selectedWeightRange').value = range;
+      document.getElementById('selectedWeightPrice').value = price;
+      document.getElementById('weight').value = range.split(' ')[0];
+    }
+ // Handle form submission
+ function submitForm(e) {
+    e.preventDefault();
+    
+    // Validate weight selection
+    if (!document.getElementById('selectedWeightRange').value) {
+      alert('Please select a weight range');
+      return;
+    }
+
+    // Prepare all form data
+    const formData = {
+      productName: document.getElementById('productName').value,
+      productType: document.getElementById('productType').value,
+      weight: document.getElementById('weight').value,
+      weightRange: document.getElementById('selectedWeightRange').value,
+      weightPrice: document.getElementById('selectedWeightPrice').value,
+      pickupAddress: document.getElementById('pickupAddress').value,
+      deliveryAddress: document.getElementById('deliveryAddress').value,
+      notes: document.getElementById('notes').value
+    };
+
+    // Store data and redirect
+    localStorage.setItem('deliveryFormData', JSON.stringify(formData));
+    window.location.href = 'confirmationpage.html';
+  }
+</script>  
+
+
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <img src="swiftdroplogo.png" alt="SwiftDrop Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Login</a></li>
+            <li><a href="registerform.html">Register</a></li>
+            <li><a href="productdescription.html">New Delivery</a></li>
+            <li><a href="confirmationpage.html">Track Order</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <div class="form-container">
+    <h1>Delivery Details</h1>
+    <form action="confirmationpage.html" method="GET" onsubmit=" submitForm()">
+      <div class="form-group">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productType">Type of Product:</label>
+        <input type="text" id="productType" name="productType" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pickupAddress">Pickup Address:</label>
+        <textarea id="pickupAddress" name="pickupAddress" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="deliveryAddress">Delivery Address:</label>
+        <textarea id="deliveryAddress" name="deliveryAddress" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Special Instructions (Optional):</label>
+        <textarea id="notes" name="notes"></textarea>
+      </div>
+
+
+<div class="weight-options">
+  <h3>Select Weight Range:</h3>
+  <div class="weight-buttons">
+    <button type="button" class="weight-btn" onclick="selectWeight('1-50 kg', 200)">1-50 kg = R200</button>
+    <button type="button" class="weight-btn" onclick="selectWeight('100-150 kg', 500)">100-150 kg = R500</button>
+    <button type="button" class="weight-btn" onclick="selectWeight('150-250 kg', 800)">150-250 kg = R800</button>
+  </div>
+  <input type="hidden" id="selectedWeightRange" name="weightRange">
+  <input type="hidden" id="selectedWeightPrice" name="weightPrice">
+</div>
+
+
+      
+      <button type="submit" class="submit-btn">Review and confirm</button>
+    </form>
+  </div>
+  
+
+  <footer>
+    <p> &copy; 2025 swiftdrop Logistics. All rights reserved</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+/* ===== Base Styles ===== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Terms Box ===== */
+.terms-box {
+    max-width: 800px;
+    width: 90%;
+    background-color: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+}
+
+.terms-text {
+    padding: 0 15px;
+    height: 500px;
+    overflow-y: auto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #555;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+/* Scrollbar Styling */
+.terms-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terms-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.terms-text::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 10px;
+}
+
+/* Headings */
+.terms-text h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.terms-text p {
+    margin-bottom: 15px;
+}
+
+.terms-box h4 {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0;
+    color: #555;
+}
+
+.terms-box h4 span {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn {
+    height: 50px;
+    width: 180px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.red-btn {
+    background-color: #3498db;
+}
+
+.grey-btn {
+    background-color: #95a5a6;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.red-btn:hover {
+    background-color: #2980b9;
+}
+
+.grey-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-box {
+        padding: 30px 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
